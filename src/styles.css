@@ -1,0 +1,22 @@
+@import '~normalize.css';
+@import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
+
+body {
+  font-family: Roboto, Arial, sans-serif;
+}
+
+#app-sidenav-container {
+  height: 100vh;
+}
+
+#app-sidenav {
+  width: 300px;
+}
+
+#main-content {
+  padding: 1em;
+}
+
+.spacer {
+  flex: 1 1 auto;
+}
