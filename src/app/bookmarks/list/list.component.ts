@@ -5,10 +5,10 @@ import { BookmarkService } from '../bookmark.service';
 
 @Component({
   selector: 'app-bookmark-list',
-  templateUrl: './bookmark-list.component.html',
-  styleUrls: ['./bookmark-list.component.css']
+  templateUrl: './list.component.html',
+  styleUrls: ['./list.component.css']
 })
-export class BookmarkListComponent implements OnInit {
+export class ListComponent implements OnInit {
   bookmarks: Bookmark[];
   errorMessage: string;
 
