@@ -1,8 +1,9 @@
 FROM node:latest
 
+ENV NPM_CONFIG_LOGLEVEL warn
 ENV APP_DIR /app
 
 COPY . $APP_DIR
 WORKDIR $APP_DIR
 
-RUN yarn --pure-lockfile
+RUN npm install
