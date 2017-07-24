@@ -1,6 +1,6 @@
 {
-  "name": "bookmarker-frontend",
-  "short_name": "bookmarker-frontend",
+  "name": "recipe-manager-frontend",
+  "short_name": "recipe-manager-frontend",
   "icons": [
     {
       "src": "/static/img/icons/android-chrome-192x192.png",
