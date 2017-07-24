@@ -1,7 +1,7 @@
 {
-  "name": "bookmarker-frontend",
+  "name": "recipe-manager-frontend",
   "version": "1.0.0",
-  "description": "Frontend for Bookmarker",
+  "description": "Frontend for Recipe Manager",
   "author": "Will Soto <will.soto9@gmail.com>",
   "private": true,
   "scripts": {
@@ -14,8 +14,10 @@
     "prettier:src": "npm run prettier -- --write {build,config,src}/**/*.{js,json}"
   },
   "dependencies": {
+    "axios": "^0.16.2",
     "vue": "^2.4.1",
-    "vue-router": "^2.7.0"
+    "vue-router": "^2.7.0",
+    "vuetify": "^0.14.5"
   },
   "devDependencies": {
     "autoprefixer": "^7.1.2",

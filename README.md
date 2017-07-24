@@ -1,6 +1,6 @@
-# bookmarker-frontend
+# recipe-manager-frontend
 
-> Frontend for Bookmarker
+> Frontend for Recipe Manager
 
 ## Build Setup
 
