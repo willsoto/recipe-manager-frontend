@@ -12,6 +12,11 @@
           </v-flex>
         </v-layout>
         <v-layout row>
+          <v-flex xs4>
+            <v-select label="Tags" v-bind:items="allTags" v-model="recipe.tags" multiple chips></v-select>
+          </v-flex>
+        </v-layout>
+        <v-layout row>
           <v-btn primary dark v-on:click="saveRecipe">Save</v-btn>
         </v-layout>
       </v-container>
@@ -19,24 +24,4 @@
   </v-card>
 </template>
 
-<script>
-import { Api } from '@/common/api';
-
-export default {
-  name: 'recipe-new',
-  data() {
-    return {
-      recipe: {
-        name: null
-      }
-    }
-  },
-  methods: {
-    async saveRecipe() {
-      const result = await Api.post('/recipes', this.recipe);
-
-      this.recipe = Object.assign({}, this.recipe, result.data);
-    }
-  }
-}
-</script>
+<script src="./new.js"></script>

@@ -3,6 +3,8 @@
 import Vue from 'vue';
 import Vuetify from 'vuetify';
 
+import { Api } from './common/api';
+
 import App from './App';
 import router from './router';
 
@@ -10,6 +12,8 @@ import 'vuetify/dist/vuetify.min.css';
 
 Vue.config.productionTip = false;
 Vue.use(Vuetify);
+
+Api.get('/users/me').then(response => console.log(response.data));
 
 new Vue({
   el: '#app',
