@@ -45,7 +45,9 @@ export default {
       }
 
       if (result.status === 200) {
-        this.$router.push('list');
+        this.$router.push({
+          name: 'list'
+        });
       }
     },
     async getUnits() {
