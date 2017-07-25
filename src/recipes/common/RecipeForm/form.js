@@ -38,7 +38,7 @@ export default {
 
       this.recipe.tags = _.map(this.recipe.tags, id => this.tagsById[id]);
 
-      if (this.recipe.recipe_id) {
+      if (!this.recipe.recipe_id) {
         result = await Api.post('/recipes', this.recipe);
       } else {
         result = await Api.put(`/recipes/${this.recipe.recipe_id}`, this.recipe);
