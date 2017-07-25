@@ -3,7 +3,7 @@
     <v-card-text>
       <v-container fluid>
         <v-layout column class="mb-5">
-          <h4>New Recipe</h4>
+          <h4>Editing {{ recipe.name }}</h4>
           <v-divider></v-divider>
         </v-layout>
         <recipe-form v-bind:recipe="recipe"></recipe-form>
@@ -12,4 +12,4 @@
   </v-card>
 </template>
 
-<script src="./new.js"></script>
+<script src="./edit.js"></script>

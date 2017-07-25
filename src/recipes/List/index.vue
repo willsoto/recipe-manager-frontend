@@ -8,7 +8,11 @@
       <v-data-table v-bind:headers="headers" :items="recipes" hide-actions class="elevation-1">
         <template slot="items" scope="props">
           <td><router-link :to="{ name: 'view', params: { recipe_id: props.item.recipe_id }}">{{ props.item.name }}</router-link></td>
-          <td>{{ props.item.updated_at }}</td>
+          <td>{{ props.item.ingredients.length }}</td>
+          <td>{{ humanizeDate(props.item.updated_at) }}</td>
+          <td class="text-xs-right">
+            <v-btn light small :to="{ name: 'edit', params: { recipe_id: props.item.recipe_id }}">Edit</v-btn>
+          </td>
         </template>
       </v-data-table>
     </div>

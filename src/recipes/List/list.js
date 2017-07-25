@@ -1,3 +1,5 @@
+import moment from 'moment';
+
 import { Api } from '@/common/api';
 
 export default {
@@ -12,10 +14,19 @@ export default {
           value: 'name'
         },
         {
+          text: 'Number of Ingredients',
+          align: 'left',
+          sortable: false
+        },
+        {
           text: 'Last updated',
           align: 'left',
           sortable: true,
           value: 'updated_at'
+        },
+        {
+          text: 'Actions',
+          align: 'right'
         }
       ],
       loading: false,
@@ -33,6 +44,9 @@ export default {
 
       this.recipes = result.data;
       this.loading = false;
+    },
+    humanizeDate(date) {
+      return moment(date).fromNow();
     }
   }
 };
