@@ -13,6 +13,7 @@ import 'vuetify/dist/vuetify.min.css';
 Vue.config.productionTip = false;
 Vue.use(Vuetify);
 
+// eslint-disable-next-line no-console
 Api.get('/users/me').then(response => console.log(response.data));
 
 new Vue({
