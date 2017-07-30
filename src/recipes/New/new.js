@@ -10,7 +10,8 @@ export default {
       recipe: {
         name: null,
         tags: [],
-        ingredients: []
+        ingredients: [],
+        instructions: []
       }
     };
   }

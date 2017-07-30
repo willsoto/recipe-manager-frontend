@@ -9,7 +9,21 @@ export default {
     return {
       allTags: [],
       allUnits: [],
-      tagsById: {}
+      tagsById: {},
+      durationValues: [
+        {
+          key: 'None',
+          value: ''
+        },
+        {
+          key: 'Minutes',
+          value: 'minutes'
+        },
+        {
+          key: 'Hours',
+          value: 'hours'
+        }
+      ]
     };
   },
   created() {
@@ -18,6 +32,7 @@ export default {
 
     if (!this.recipe.recipe_id) {
       this.addIngredient();
+      this.addInstruction();
     }
   },
   methods: {
@@ -60,6 +75,13 @@ export default {
         name: null,
         quanity: 0,
         unit: null
+      });
+    },
+    addInstruction() {
+      this.recipe.instructions.push({
+        text: null,
+        time: null,
+        duration: null
       });
     }
   }
