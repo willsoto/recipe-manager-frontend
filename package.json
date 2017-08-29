@@ -10,8 +10,8 @@
     "build": "node build/build.js",
     "lint": "eslint --ext .js,.vue src",
     "precommit": "lint-staged",
-    "prettier": "prettier --single-quote --print-width 120 --bracket-spacing --write",
-    "prettier:src": "npm run prettier -- --write {build,config,src}/**/*.{js,json}"
+    "prettier": "prettier --write",
+    "prettier:src": "npm run prettier -- {build,config,src}/**/*.{js,json}"
   },
   "dependencies": {
     "apollo-client": "^1.9.1",
