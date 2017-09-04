@@ -1,6 +1,6 @@
 <template>
   <div id="recipe-list">
-    <div v-if="loading">
+    <div v-if="loading === 1">
       <v-progress-circular indeterminate class="primary--text"></v-progress-circular>
     </div>
 

@@ -1,11 +1,32 @@
 import moment from 'moment';
+import gql from 'graphql-tag';
 
-import { Api } from '@/common/api';
+const recipesQuery = gql`
+  {
+    recipes {
+      recipe_id
+      name
+      updated_at
+      ingredients {
+        ingredient_id
+        name
+      }
+    }
+  }
+`;
 
 export default {
   name: 'recipe-list',
+  apollo: {
+    recipes: {
+      query: recipesQuery,
+      loadingKey: 'loading'
+    }
+  },
   data() {
     return {
+      loading: 0,
+      recipes: [],
       headers: [
         {
           text: 'Name',
@@ -28,23 +49,10 @@ export default {
           text: 'Actions',
           align: 'right'
         }
-      ],
-      loading: false,
-      recipes: null
+      ]
     };
   },
-  created() {
-    this.getRecipes();
-  },
   methods: {
-    async getRecipes() {
-      this.loading = true;
-
-      const result = await Api.get('/recipes');
-
-      this.recipes = result.data;
-      this.loading = false;
-    },
     humanizeDate(date) {
       return moment(date).fromNow();
     }
