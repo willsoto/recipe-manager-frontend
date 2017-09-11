@@ -8,6 +8,12 @@ export const Api = axios.create({
 export const apolloClient = new ApolloClient({
   networkInterface: createNetworkInterface({
     uri: '/api/graphql',
-    transportBatching: true
-  })
+    transportBatching: true,
+    // These options get passed to `fetch`
+    // We need to make sure the session cookie gets sent with every request
+    opts: {
+      credentials: 'same-origin'
+    }
+  }),
+  connectToDevTools: true
 });
