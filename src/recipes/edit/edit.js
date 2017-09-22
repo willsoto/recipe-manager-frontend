@@ -1,6 +1,6 @@
 import { Api } from '@/common/api';
 
-import RecipeForm from '../common/RecipeForm';
+import RecipeForm from '../common/recipe-form';
 
 export default {
   name: 'recipe-edit',

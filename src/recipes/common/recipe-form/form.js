@@ -1,4 +1,5 @@
 import _ from 'lodash';
+import gql from 'graphql-tag';
 
 import { Api } from '@/common/api';
 
@@ -47,6 +48,24 @@ export default {
       });
 
       this.tagsById = _.keyBy(result.data, 'tag_id');
+    },
+    async createRecipe() {
+      const result = await this.$apollo.mutate({
+        mutation: gql`
+          mutation($name: String!) {
+            create_recipe(recipe_data: { name: $name }) {
+              recipe {
+                name
+              }
+            }
+          }
+        `,
+        variables: {
+          name: this.recipe.name
+        }
+      });
+
+      console.log(result.data);
     },
     async saveRecipe() {
       let result;

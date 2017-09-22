@@ -1,4 +1,4 @@
-import RecipeForm from '../common/RecipeForm';
+import RecipeForm from '../common/recipe-form';
 
 export default {
   name: 'recipe-new',

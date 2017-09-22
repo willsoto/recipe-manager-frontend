@@ -77,7 +77,8 @@
     </v-layout>
     <v-divider class="mt-4 mb-4"></v-divider>
     <v-flex>
-      <v-btn class="ma-0" primary dark v-on:click="saveRecipe">Save</v-btn>
+      <v-btn class="ma-0" primary dark v-on:click="saveRecipe">Save regular</v-btn>
+      <v-btn class="ma-0" primary dark v-on:click="createRecipe">Save graphql</v-btn>
     </v-flex>
   </v-container>
 </template>

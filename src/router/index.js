@@ -1,10 +1,10 @@
 import Vue from 'vue';
 import Router from 'vue-router';
 
-import List from '@/recipes/List';
-import New from '@/recipes/New';
-import View from '@/recipes/View';
-import Edit from '@/recipes/Edit';
+import List from '@/recipes/list';
+import New from '@/recipes/new';
+import View from '@/recipes/view';
+import Edit from '@/recipes/edit';
 
 Vue.use(Router);
 
