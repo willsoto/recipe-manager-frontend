@@ -1,10 +1,10 @@
 <template>
   <div id="recipe-list">
-    <div v-if="loading === 1">
+    <div v-if="loading">
       <v-progress-circular indeterminate class="primary--text"></v-progress-circular>
     </div>
 
-    <div v-if="recipes">
+    <div v-if="!loading">
       <v-data-table v-bind:headers="headers" :items="recipes" hide-actions class="elevation-1">
         <template slot="items" scope="props">
           <td><router-link :to="{ name: 'view', params: { recipe_id: props.item.recipe_id }}">{{ props.item.name }}</router-link></td>

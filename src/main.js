@@ -6,6 +6,7 @@ import VueApollo from 'vue-apollo';
 
 import App from './App';
 import router from './router';
+import { store } from './store';
 import { apolloClient } from './common/api';
 
 import 'vuetify/dist/vuetify.min.css';
@@ -21,6 +22,7 @@ Vue.use(VueApollo);
 
 new Vue({
   el: '#app',
+  store,
   router,
   apolloProvider,
   template: '<App/>',
