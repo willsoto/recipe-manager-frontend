@@ -1,4 +1,4 @@
-import { Api } from '@/common/api';
+import { mapActions, mapGetters } from 'vuex';
 
 export default {
   name: 'recipe-view',
@@ -9,13 +9,20 @@ export default {
     };
   },
   created() {
-    this.getRecipe(this.recipe_id);
+    this.fetchRecipe(this.recipe_id).then(() => {
+      this.recipe = this.getRecipe(this.recipe_id);
+    });
+  },
+  // mounted() {
+  //   this.recipe = this.getRecipe(this.recipe_id);
+  // },
+  computed: {
+    ...mapGetters({
+      getRecipe: 'getRecipe',
+      loading: 'getLoading'
+    })
   },
   methods: {
-    async getRecipe(recipe_id) {
-      const result = await Api.get(`/recipes/${recipe_id}`);
-
-      this.recipe = Object.assign({}, this.recipe, result.data);
-    }
+    ...mapActions(['fetchRecipe'])
   }
 };

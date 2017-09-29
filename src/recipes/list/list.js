@@ -1,29 +1,8 @@
 import { mapActions, mapGetters } from 'vuex';
 import moment from 'moment';
-// import gql from 'graphql-tag';
-
-// const recipesQuery = gql`
-//   {
-//     recipes {
-//       recipe_id
-//       name
-//       updated_at
-//       ingredients {
-//         ingredient_id
-//         name
-//       }
-//     }
-//   }
-// `;
 
 export default {
   name: 'recipe-list',
-  // apollo: {
-  //   recipes: {
-  //     query: recipesQuery,
-  //     loadingKey: 'loading'
-  //   }
-  // },
   data() {
     return {
       headers: [

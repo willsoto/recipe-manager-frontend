@@ -14,6 +14,5 @@ export const apolloClient = new ApolloClient({
     opts: {
       credentials: 'same-origin'
     }
-  }),
-  connectToDevTools: true
+  })
 });

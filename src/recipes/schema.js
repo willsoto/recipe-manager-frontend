@@ -1,6 +1,6 @@
 import { schema } from 'normalizr';
 
-export const ingredient = new schema.Entity(
+export const ingredientSchema = new schema.Entity(
   'ingredients',
   {},
   {
@@ -8,7 +8,7 @@ export const ingredient = new schema.Entity(
   }
 );
 
-export const instruction = new schema.Entity(
+export const instructionSchema = new schema.Entity(
   'instructions',
   {},
   {
@@ -16,7 +16,7 @@ export const instruction = new schema.Entity(
   }
 );
 
-export const tag = new schema.Entity(
+export const tagSchema = new schema.Entity(
   'tags',
   {},
   {
@@ -24,12 +24,12 @@ export const tag = new schema.Entity(
   }
 );
 
-export const recipe = new schema.Entity(
+export const recipeSchema = new schema.Entity(
   'recipes',
   {
-    ingredients: [ingredient],
-    instructions: [instruction],
-    tags: [tag]
+    ingredients: [ingredientSchema],
+    instructions: [instructionSchema],
+    tags: [tagSchema]
   },
   {
     idAttribute: 'recipe_id'
